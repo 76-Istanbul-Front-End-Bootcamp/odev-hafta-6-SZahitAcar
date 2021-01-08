@@ -4,10 +4,11 @@ window.editPet = (id) => {
     document.querySelector("#petName").value = $cardEl.querySelector("h5").textContent;
     document.querySelector("#petImage").value = $cardEl.querySelector("img").src;
     window.isEditing = id;
+    $("#addPetModal").modal("show");
 };
 
 const addPet = (pet) => {
-    const petCardHTML = `<div class="card" style="margin-bottom: 20px" id="pet${pet.id}">
+    const petCardHTML = `<div class="card" id="pet${pet.id}">
                     <img src=${pet.image} class="card-img-top" onclick="editPet(${pet.id})">
                     <div class="card-body">
                         <h5 class="card-title">${pet.name}</h5>
